@@ -1,0 +1,46 @@
+<app-header title=""></app-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+
+    <div class="main-title">
+
+      <h1 class="ion-text-center">ArtSpot</h1>
+
+    </div>
+
+    <div class="section">
+      
+      <div *ngIf="arts else errorMessage">
+        <ion-card *ngFor="let art of arts">
+          <a routerLink="/detail/{{art.id}}">
+            <ion-card-header>
+              <ion-card-title>
+                <ion-text>
+                  {{art.name}} 
+                </ion-text>
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+
+              <p>A {{art.location}}</p>
+              <p> <img [src]="art.image" alt="Street art preview"> </p>
+
+            </ion-card-content>
+          </a>
+        </ion-card>
+      
+        <ion-button routerLink="/arts" shape="round" expand="full">
+          Voir plus
+        </ion-button>
+      </div>
+
+      <ng-template #errorMessage>
+        <ion-text color="danger"> {{errorMessage}} </ion-text>
+      </ng-template>
+
+    </div>
+
+  </div>
+  
+</ion-content>

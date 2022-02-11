@@ -1,0 +1,13 @@
+<ion-header translucent class="ion-no-border" mode="ios">
+  <ion-toolbar class="ion-padding">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" icon="arrow-back-outline" color="medium"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <img *ngIf="logo != ''" [class]="imgClass" [src]="logo" width="40px" alt="logo">
+      {{ title }}
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>

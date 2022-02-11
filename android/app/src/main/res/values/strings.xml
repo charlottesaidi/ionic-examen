@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ionic-exam-csaidi</string>
+    <string name="title_activity_main">ionic-exam-csaidi</string>
+    <string name="package_name">fr.csaidi.examen</string>
+    <string name="custom_url_scheme">fr.csaidi.examen</string>
+</resources>

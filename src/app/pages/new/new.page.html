@@ -1,0 +1,37 @@
+<app-header title="Ajouter une oeuvre" logo=""></app-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+
+    <div class="section">
+      <form #artForm="ngForm" (ngSubmit)="create()">
+
+        <ion-text *ngIf="errorMessage" color="danger"> {{errorMessage}} </ion-text>
+
+        <ion-item>
+          <ion-label position="floating">Nom</ion-label>
+          <ion-input [(ngModel)]="art.name" name="name" required minlenght="3" maxlength="60" #name="ngModel"></ion-input>
+        </ion-item>
+        <ion-text *ngIf="!name.valid && name.touched" message="Vous devez saisir un nom entre 3 et 60 caractères" color="danger"> {{errorMessage}} </ion-text>
+
+        <ion-item>
+          <ion-label position="floating">Url de l'image</ion-label>
+          <ion-input [(ngModel)]="art.image" name="image" required pattern="https://.*" #image="ngModel"></ion-input>
+        </ion-item>
+        <ion-text *ngIf="!image.valid && image.touched" message="Vous devez renseigner une url valide" color="danger"> {{errorMessage}} </ion-text>
+
+        <ion-item>
+          <ion-label>Ville</ion-label>
+          <ion-input [(ngModel)]="art.location" name="location" required  #location="ngModel">
+          </ion-input>
+        </ion-item>
+        <ion-text *ngIf="!location.valid && location.touched" message="Vous devez renseigner une ville" color="danger"> {{errorMessage}} </ion-text>
+
+        <ion-button color="primary" type="submit" [disabled]="!artForm.form.valid">Ajouter</ion-button>
+
+      </form>
+    </div>
+
+  </div>
+
+</ion-content>

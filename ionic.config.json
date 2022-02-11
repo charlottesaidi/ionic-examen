@@ -1,0 +1,7 @@
+{
+  "name": "ArtSpot",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

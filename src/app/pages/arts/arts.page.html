@@ -1,0 +1,40 @@
+<app-header title="Arts" logo=""></app-header>
+
+<ion-content>
+  <div id="container">
+
+    <div class="section">
+
+      <div *ngIf="arts else errorMessage">
+        <ion-card *ngFor="let art of arts">
+          <a routerLink="/detail/{{art.id}}">
+            <ion-card-header>
+              <ion-card-title>
+                <ion-text>
+                  {{art.name}} 
+                </ion-text>
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+
+              <p>A {{art.location}}</p>
+              <p> <img [src]="art.image" alt="Street art preview"> </p>
+
+            </ion-card-content>
+          </a>
+          <p id="{{art.id}}" appAddfav>
+            <ion-button shape="round" color="primary">
+              <ion-icon name="heart-outline"></ion-icon>
+            </ion-button>
+          </p>
+        </ion-card>
+      </div>
+
+      <ng-template #errorMessage>
+        <ion-text color="danger"> {{errorMessage}} </ion-text>
+      </ng-template>
+
+    </div>
+
+  </div>
+</ion-content>

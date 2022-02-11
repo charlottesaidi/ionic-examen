@@ -1,0 +1,37 @@
+<app-header title="Mes favoris" logo=""></app-header>
+
+<ion-content>
+  <div id="container">
+
+    <div class="section">
+
+      <ion-text *ngIf="errorMessage" color="danger"> {{errorMessage}} </ion-text>
+
+      <div *ngIf="favorites else alt">
+        <ion-card *ngFor="let fav of favorites">
+          <a routerLink="/detail/{{fav.id}}">
+            <ion-card-header>
+              <ion-card-title>
+                <ion-text>
+                  {{fav.name}} 
+                </ion-text>
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+
+              <p>A {{fav.location}}</p>
+              <p> <img [src]="fav.image" alt="Street fav preview"> </p>
+
+            </ion-card-content>
+          </a>
+        </ion-card>
+      </div>
+
+      <ng-template #alt>
+        <ion-text>Vous n'avez mis aucune oeuvre en favoris pour le moment...</ion-text>
+      </ng-template>
+
+    </div>
+
+  </div>
+</ion-content>
