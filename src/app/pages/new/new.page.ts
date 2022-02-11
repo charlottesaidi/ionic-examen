@@ -36,6 +36,7 @@ export class NewPage implements OnInit {
   }
 
   create() {    
+    this.art.createdAt = new Date()
     this.artService.create(this.art).subscribe(() => {
       this.router.navigate(['/arts'])
     })

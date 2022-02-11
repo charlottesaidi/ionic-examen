@@ -2,8 +2,5 @@
 	"appId": "fr.csaidi.artspot",
 	"appName": "ArtSpot",
 	"webDir": "www",
-	"bundledWebRuntime": false,
-	"server": {
-		"url": "http://192.168.1.16:8100"
-	}
+	"bundledWebRuntime": false
 }

@@ -22,6 +22,7 @@ export class AddfavDirective {
   }
 
   @HostListener('click') addFavorite(){
+    this.favorite.createdAt = new Date()
     this.favoriteService.create(this.favorite).subscribe( async () => {
       const toast = await this.toastController.create({
         message: 'Art ajouté aux favoris',
