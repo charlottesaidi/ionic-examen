@@ -27,8 +27,7 @@ export class NewPage implements OnInit {
     Geolocation.watchPosition({enableHighAccuracy: true}, async (resp, err) => {
       if(!err) { 
         const results = await this.geocoder.reverseGeocode(resp.coords.latitude, resp.coords.longitude)
-        this.address = results.pop();
-        console.log(this.address)
+        console.log(results)
       } else {
         this.errorMessage = err.message
         console.log(err);
